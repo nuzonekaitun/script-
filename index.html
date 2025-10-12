@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAITUN | HERNU</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- หน้า Login -->
+<div id="login-page">
+  <h1>เข้าสู่ระบบ</h1>
+  <input type="text" id="username" placeholder="ชื่อผู้ใช้">
+  <input type="password" id="password" placeholder="รหัสผ่าน">
+  <button onclick="login()">เข้าสู่ระบบ</button>
+  <button onclick="signup()">สมัครสมาชิก</button>
+  <p id="login-msg"></p>
+</div>
+
+<!-- หน้า Main -->
+<div id="main-page" style="display:none;">
+  <header>
+    <h1>KAITUN | HERNU ✅</h1>
+    <nav>
+      <button onclick="showPage('home')">หน้าหลัก</button>
+      <button onclick="showPage('store')">ร้านค้า</button>
+      <button onclick="showPage('cart')">ตะกร้า</button>
+      <button onclick="showPage('admin')">Admin</button>
+      <button onclick="logout()">ออกจากระบบ</button>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="page">
+    <h2>หน้าหลัก</h2>
+    <p>เครดิตของคุณ: <span id="user-credit">0</span> ฿</p>
+  </section>
+
+  <!-- Store -->
+  <section id="store" class="page" style="display:none;">
+    <h2>ร้านค้า</h2>
+    <button onclick="buyFreeItem()">ซื้อของฟรี (0.0000001%)</button>
+    <button onclick="buyGamePass()">ซื้อ Game Pass 100฿</button>
+    <button onclick="buySpecialItem()">สุ่มของพิเศษ 45฿</button>
+    <div id="store-msg"></div>
+  </section>
+
+  <!-- Cart -->
+  <section id="cart" class="page" style="display:none;">
+    <h2>ตะกร้า</h2>
+    <div id="cart-items"></div>
+    <button onclick="checkout()">ชำระเงิน</button>
+  </section>
+
+  <!-- Admin -->
+  <section id="admin" class="page" style="display:none;">
+    <h2>Admin Panel</h2>
+    <button onclick="addCreditToAll()">เติมเครดิตผู้ใช้</button>
+    <button onclick="addReward()">เพิ่มของรางวัล</button>
+    <div id="admin-msg"></div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
